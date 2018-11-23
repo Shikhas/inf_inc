@@ -166,5 +166,5 @@ IQR(grwth_county$pct_wrk_class)
 summary(grwth_county$pct_dep_class)
 IQR(grwth_county$pct_dep_class)
 
-
-
+# Check for an NA value
+sum(is.na(grwth_county)) # this gives that we do not have any NA value in our data
