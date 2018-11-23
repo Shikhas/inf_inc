@@ -157,7 +157,7 @@ step(model01)
 Incomed.model1 <- subset(Incomed.model1, select=-c(pct_COW01,Working_class,pct_OCC01,EDU03))
 colnames(Incomed.model1)
 qqnorm(Incomed.model1$Median_Household_Income)
-qqline(Incomed.model1$Median_Household_Income)
+qqline(Incomed.model1$Median_Household_Income) 
 
 ################# 
 
