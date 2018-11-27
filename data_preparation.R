@@ -12,7 +12,7 @@ grwth_county$pct_wrk_class <- (grwth_county$Age_group_18to34 + grwth_county$Age_
 grwth_county$pct_dep_class <- (grwth_county$Age_group_75andover + grwth_county$Age_group_5to17)
 
 # dropping irrelevant variables
-grwth_county <- grwth_county %>% select(-Id,-(Age_group_5to17:Age_group_75andover),
+grwth_county <- grwth_county %>% select(-Id,-State,-Total_population,-(Age_group_5to17:Age_group_75andover),
                                         -pct_Less_than_9th_grade,-`pct_Some_college,no_degree`,
                                         - Employed,- `Income Tax`, - `Sales and Gross Receipts Tax`)
 
@@ -20,7 +20,7 @@ grwth_county <- grwth_county %>% select(-Id,-(Age_group_5to17:Age_group_75andove
 
 ############################################################################################################################
 # renaming colnames
-colnames(grwth_county) <- c("id","county","state","tot_pop","sex_ratio","pct_empd",
+colnames(grwth_county) <- c("id","county","sex_ratio","pct_empd",
                             "pct_occ01","pct_occ02","pct_occ03","pct_occ04","pct_occ05",
                             "pct_cow01","pct_cow02","pct_cow03","pct_cow04",
                             "income","pct_bpl",
@@ -104,9 +104,9 @@ layout <- matrix(c(1,2,3,4),2,2,byrow = TRUE)
 multiplot(p1,p2,p3,p4,layout = layout)
 
 #saved as boxplot_4 in plots folder
-p1 <- ggplot(grwth_county,aes("High school graduate ",pct_highschool_grad)) + geom_boxplot()
-p2 <- ggplot(grwth_county,aes("Some college or associate's degree",pct_somecol_nodeg)) + geom_boxplot() # ass degree or no degree ?
-p3 <- ggplot(grwth_county,aes("Bachelor's degree or higher",pct_bachdeg_or_highr)) + geom_boxplot()
+p1 <- ggplot(grwth_county,aes("Less than high school graduate",pct_lessthan_highgrad)) + geom_boxplot()
+p2 <- ggplot(grwth_county,aes("High school graduate ",pct_highschool_grad)) + geom_boxplot()
+ p3 <- ggplot(grwth_county,aes("Bachelor's degree or higher",pct_bachdeg_or_highr)) + geom_boxplot()
 layout <- matrix(c(1,2,3,3),2,2,byrow = TRUE)
 multiplot(p1,p2,p3,layout = layout)
 
@@ -149,10 +149,10 @@ summary(grwth_county$pct_cow04)
 IQR(grwth_county$pct_cow04)
 
 # saved as summary_n_iqr_4 in snapshots folder
+summary(grwth_county$pct_lessthan_highgrad)
+IQR(grwth_county$pct_lessthan_highgrad)
 summary(grwth_county$pct_highschool_grad)
 IQR(grwth_county$pct_highschool_grad)
-summary(grwth_county$pct_somecol_nodeg)
-IQR(grwth_county$pct_somecol_nodeg)
 summary(grwth_county$pct_bachdeg_or_highr)
 IQR(grwth_county$pct_bachdeg_or_highr)
 
