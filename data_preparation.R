@@ -168,3 +168,43 @@ IQR(grwth_county$pct_dep_class)
 
 # Check for an NA value
 sum(is.na(grwth_county)) # this gives that we do not have any NA value in our data
+
+############################### Histograms ############################################
+
+p1 <- ggplot(grwth_county,aes(sex_ratio)) + geom_histogram() + xlab("Sex Ratio")
+p2 <- ggplot(grwth_county,aes(pct_empd)) + geom_histogram() + xlab("Percentage Employed")
+p3 <- ggplot(grwth_county,aes(pct_bpl)) + geom_histogram() + xlab("Percentage Below Poverty Line")
+layout <- matrix(c(1,2,3,3),2,2,byrow = TRUE)
+multiplot(p1,p2,p3,layout = layout)
+
+p1 <- ggplot(grwth_county,aes(pct_occ01)) + geom_histogram() + xlab("Management, business, science, and arts occ")
+p2 <- ggplot(grwth_county,aes(pct_occ02)) + geom_histogram() + xlab("Service occ")
+p3 <- ggplot(grwth_county,aes(pct_occ03)) + geom_histogram() + xlab("Sales and office occ")
+p4 <- ggplot(grwth_county,aes(pct_occ04)) + geom_histogram() + xlab("Natural resources, Maintenance occ")
+p5 <- ggplot(grwth_county,aes(pct_occ05)) + geom_histogram() + xlab("Production, transportation, and material moving occ")
+layout <- matrix(c(1,2,3,4,5,5),3,2,byrow = TRUE)
+multiplot(p1,p2,p3,p4,p5,layout = layout)
+
+
+p1 <- ggplot(grwth_county,aes(pct_cow01)) + geom_histogram() + xlab("Private wage and salary workers")
+p2 <- ggplot(grwth_county,aes(pct_cow02)) + geom_histogram() + xlab("Government workers")
+p3 <- ggplot(grwth_county,aes(pct_cow03)) + geom_histogram() + xlab("Self-employed in own not incorporated business workers")
+p4 <- ggplot(grwth_county,aes(pct_cow04)) + geom_histogram() + xlab("Unpaid family workers")
+layout <- matrix(c(1,2,3,4),2,2,byrow = TRUE)
+multiplot(p1,p2,p3,p4,layout = layout)
+
+
+p1 <- ggplot(grwth_county,aes(pct_lessthan_highgrad)) + geom_histogram() + xlab("Less than high school graduate")
+p2 <- ggplot(grwth_county,aes(pct_highschool_grad)) + geom_histogram() + xlab("High school graduate")
+p3 <- ggplot(grwth_county,aes(pct_bachdeg_or_highr)) + geom_histogram() + xlab("Bachelor's degree or higher")
+layout <- matrix(c(1,2,3,3),2,2,byrow = TRUE)
+multiplot(p1,p2,p3,layout = layout)
+
+
+p1 <- ggplot(grwth_county,aes(tax_in)) + geom_histogram() + xlab("Income Tax")
+p2 <- ggplot(grwth_county,aes(tax_sr)) + geom_histogram() + xlab("Sales and Gross Receipts Tax")
+p3 <- ggplot(grwth_county,aes(pct_wrk_class)) + geom_histogram() + xlab("Working Class")
+p4 <- ggplot(grwth_county,aes(pct_dep_class)) + geom_histogram() + xlab("Dependent Class")
+layout <- matrix(c(1,2,3,4),2,2,byrow = TRUE)
+multiplot(p1,p2,p3,p4,layout = layout)
+
