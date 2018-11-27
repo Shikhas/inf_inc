@@ -12,7 +12,8 @@ grwth_county$pct_wrk_class <- (grwth_county$Age_group_18to34 + grwth_county$Age_
 grwth_county$pct_dep_class <- (grwth_county$Age_group_75andover + grwth_county$Age_group_5to17)
 
 # dropping irrelevant variables
-grwth_county <- grwth_county %>% select(-Id,-`pct_Less than high school graduate`,-pct_Less_than_9th_grade,
+grwth_county <- grwth_county %>% select(-Id,-(Age_group_5to17:Age_group_75andover),
+                                        -pct_Less_than_9th_grade,-`pct_Some_college,no_degree`,
                                         - Employed,- `Income Tax`, - `Sales and Gross Receipts Tax`)
 
 
