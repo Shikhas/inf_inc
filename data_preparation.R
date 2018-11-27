@@ -24,8 +24,7 @@ colnames(grwth_county) <- c("id","county","state","tot_pop","sex_ratio","pct_emp
                             "pct_occ01","pct_occ02","pct_occ03","pct_occ04","pct_occ05",
                             "pct_cow01","pct_cow02","pct_cow03","pct_cow04",
                             "income","pct_bpl",
-                            "pct_ag5to17","pct_ag18to34","pct_ag35to49","pct_ag50to74","pct_ag75nover",
-                            "pct_highschool_grad","pct_somecol_nodeg","pct_bachdeg_or_highr",
+                            "pct_lessthan_highgrad","pct_highschool_grad","pct_bachdeg_or_highr",
                             "tax_in","tax_sr","pct_wrk_class","pct_dep_class")
 
 # now we have 19 predictor variables with target variable as income
